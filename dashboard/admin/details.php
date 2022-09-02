@@ -94,12 +94,10 @@ if(isset($_POST['submit'])){
                         }
                       // } 
                     }
-                 
+
+                    $sql9 = "UPDATE accounts SET deposit_status='yes' WHERE username='$username'";
+                    $query9 = mysqli_query($conn, $sql9);
                 }
-               
-
-                  
-
 
                 $query1 = mysqli_query($conn, $sql1);
                 $query2 = mysqli_query($conn, $sql2);
