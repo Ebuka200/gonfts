@@ -33,12 +33,18 @@ if(isset($_POST['submit'])){
   $category = $_POST['category'];
   $artist = $_POST['artist'];
   $link = $_POST['link'];
+  $token = $_POST['token'];
+  $lastsold = $_POST['last_sold_date'];
+  $lastprice = $_POST['last_price_sold'];
+  $source = $_POST['source'];
+  $assetcontract = $_POST['asset_contract'];
+  $token = $_POST['token'];
   $target_file = upload_nft($_FILES['image']);
     if($target_file != false){
       $img_path = $target_file;
     }
 
-  $sql = "INSERT INTO nfts( name, description, category, link, image , artist) values('$name' , '$description' ,'$category', '$link' , '$target_file' , '$artist')";
+  $sql = "INSERT INTO nfts( name, description, token_standard,last_sold, last_price_sold, source, asset_contract, category, link, image , artist) values('$name' , '$description' , '$token', '$lastsold', '$lastprice', '$source', '$assetcontract' , '$category', '$link' , '$target_file' , '$artist')";
   // $sql = "INSERT INTO productdetails(name) values('Brenda')";
   $query = mysqli_query($conn, $sql);
   $error = false;
@@ -455,9 +461,90 @@ if(isset($_POST['submit'])){
                             </div>
 
                         </div>
+
+                         <div class="row">
+                            <div class="col-lg-3 ">
+                                <div class="mb-3">
+                                        <label for="" class="mb-2">Token Standard</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="defaultFormControlInput"
+                                            placeholder="Enter Token"
+                                            aria-describedby="defaultFormControlHelp"
+                                            name="token"
+                                            
+                                        />
+                                        
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 ">
+                                <div class="mb-3">
+                                        <label for="" class="mb-2">Last Sold Date</label>
+                                        <input
+                                            type="date"
+                                            class="form-control"
+                                            id="defaultFormControlInput"
+                                            placeholder="Enter Last Sold Date"
+                                            aria-describedby="defaultFormControlHelp"
+                                            name="last_sold_date"                                         
+                                        />                                    
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 ">
+                                <div class="mb-3">
+                                        <label for="" class="mb-2">Last Price Sold</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="defaultFormControlInput"
+                                            placeholder="Enter Last Price Sold"
+                                            aria-describedby="defaultFormControlHelp"
+                                            name="last_price_sold"
+                                            
+                                        />
+                                        
+                                </div>
+                            </div>
+
+                                   
+                            <div class="col-lg-3 ">
+                                <div class="mb-3">
+                                        <label for="" class="mb-2 ">Source</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="defaultFormControlInput"
+                                            placeholder="https://www.example.com"
+                                            aria-describedby="defaultFormControlHelp"
+                                            name="source"
+                                      
+                                        />
+                                        
+                                </div>
+                            </div>
+
+                        </div>
                         
                         <div class="row">
-                            <div class="col-lg-6 ">
+
+                            <div class="col-lg-4">
+                                <div class="mb-3">
+                                        <label for="" class="mb-2">Asset Contract</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="defaultFormControlInput"
+                                            aria-describedby="defaultFormControlHelp"
+                                            placeholder="Enter Asset Contract"
+                                            name="asset_contract"
+                                        />                                
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
                                 <div class="mb-3">
                                         <label for="" class="mb-2">Image</label>
                                         <input
@@ -466,12 +553,11 @@ if(isset($_POST['submit'])){
                                             id="defaultFormControlInput"
                                             aria-describedby="defaultFormControlHelp"
                                             name="image"
-                                        />
-                                        
+                                        />           
                                 </div>
                             </div>
        
-                            <div class="col-lg-6 ">
+                            <div class="col-lg-4">
                                 <div class="mb-3">
                                         <label for="" class="mb-2 ">Artist</label>
                                         <input
