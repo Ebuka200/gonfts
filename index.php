@@ -148,21 +148,21 @@ if(isset($_POST['submit'])){
                                 
                             </div>
                             <div class="col-10 col-lg-5  d-none d-lg-block">
-                                    <div class="row  align-items-center">
-                                            <div class="col-sm-6">
-                                                <div class="bg-primary mb-4 wow fadeIn" data-wow-delay="0.3s">
-                                                        <img src="img/1.jpg" alt="" height="100%" width="100%">
-                                                </div>
-                                                <div class="bg-secondary wow fadeIn" data-wow-delay="0.5s">
-                                                    <img src="img/3.jpg" alt="" height="100%" width="100%">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="bg-success wow fadeIn" data-wow-delay="0.7s" style="height: 270px">
-                                                   <img src="img/2.jpg" alt="" height="100%" width="100%">
-                                                </div>
-                                            </div>
+                                <div class="row  align-items-center">
+                                    <div class="col-sm-6">
+                                        <div class="bg-primary mb-4 wow fadeIn" data-wow-delay="0.3s">
+                                                <img src="img/1.jpg" alt="" height="100%" width="100%">
+                                        </div>
+                                        <div class="bg-secondary wow fadeIn" data-wow-delay="0.5s">
+                                            <img src="img/3.jpg" alt="" height="100%" width="100%">
+                                        </div>
                                     </div>
+                                    <div class="col-sm-6">
+                                        <div class="bg-success wow fadeIn" data-wow-delay="0.7s" style="height: 270px">
+                                            <img src="img/2.jpg" alt="" height="100%" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
