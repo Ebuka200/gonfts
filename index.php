@@ -541,10 +541,10 @@ if(isset($_POST['submit'])){
 <!-- About End -->
 
 
-    <div id="artists" class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <!-- <div id="artists" class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="text-left">
-                <!-- <h6 class="text-secondary text-uppercase">Testimonial</h6> -->
+                <h6 class="text-secondary text-uppercase">Testimonial</h6>
                 <h1 class="mb-0 px-4">Top Artists</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -633,10 +633,10 @@ if(isset($_POST['submit'])){
               
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="text-left wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="mb-5">Rescources & News</h1>
@@ -649,14 +649,14 @@ if(isset($_POST['submit'])){
                         </div>
                         <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
                         <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <!-- <div class="btn-slide mt-1">
+                        <div class="btn-slide mt-1">
                             <i class="fa fa-share"></i>
                             <span>
                                 <a href=""><i class="fab fa-facebook-f"></i></a>
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-instagram"></i></a>
                             </span>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -666,14 +666,14 @@ if(isset($_POST['submit'])){
                         </div>
                         <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
                         <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <!-- <div class="btn-slide mt-1">
+                        <div class="btn-slide mt-1">
                             <i class="fa fa-share"></i>
                             <span>
                                 <a href=""><i class="fab fa-facebook-f"></i></a>
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-instagram"></i></a>
                             </span>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -683,14 +683,14 @@ if(isset($_POST['submit'])){
                         </div>
                         <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
                         <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <!-- <div class="btn-slide mt-1">
+                        <div class="btn-slide mt-1">
                             <i class="fa fa-share"></i>
                             <span>
                                 <a href=""><i class="fab fa-facebook-f"></i></a>
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-instagram"></i></a>
                             </span>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -700,19 +700,19 @@ if(isset($_POST['submit'])){
                         </div>
                         <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
                         <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <!-- <div class="btn-slide mt-1">
+                        <div class="btn-slide mt-1">
                             <i class="fa fa-share"></i>
                             <span>
                                 <a href=""><i class="fab fa-facebook-f"></i></a>
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-instagram"></i></a>
                             </span>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team End -->
 
 
