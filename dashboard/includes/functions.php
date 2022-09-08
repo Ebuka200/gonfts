@@ -37,7 +37,6 @@ function upload_image($image_array, $min_size=5000)
 	}
 }
 ?>
-
 <?php
 function cleanInput($input) {
 
@@ -60,12 +59,20 @@ function sanitize($input) {
 	// $dbusername = "govextyt_e_shipping_ebuka";
 	// $dbpassword = "govextyt_e_shipping_ebuka_password";
 	// $dbname = "govextyt_e_shipping_ebuka";
-	
-$dbhost = "localhost";
+
+// $dbhost = "localhost";
+// $dbusername = "root";
+// $dbpassword = "";
+// $dbname = "gonft";
+// $port = "3306";
+
+$dbhost = "38.242.211.41";
 $dbusername = "root";
-$dbpassword = "";
+$dbpassword = "password";
 $dbname = "gonft";
-$link = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
+$port = "3306";
+
+$link = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname, $port);
     if (is_array($input)) {
         foreach($input as $var=>$val) {
             $output[$var] = sanitize($val);
@@ -80,10 +87,6 @@ $link = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
     }
     return $output;
 }
-
-?>	
-
-<?php
 	function upload_thumbnail($image_array, $min_size=5000)
 		{
 			$img_size = $image_array['size'];
@@ -121,12 +124,6 @@ $link = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
 			}
 		}
 	}
-
-	
-?>
-
-<?php
-
 function upload_nft($image_array, $min_size=5000){
 
 		$img_size = $image_array['size'];
@@ -166,4 +163,3 @@ function upload_nft($image_array, $min_size=5000){
 	}
 
 ?>
-
