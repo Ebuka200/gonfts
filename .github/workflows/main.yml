@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to Docker Hub
+        #run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
+        uses: docker/login-action@v1
+        with:
+          username: odenigbogodfrey
+          password: ea8999b9-356b-44c8-9fe0-be8d860d113e
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./docker/Dockerfile
+          push: true
+          tags: odenigbogodfrey/gonft:latest
+  deploy:
+    runs-on: ubuntu-latest
+    name: Redeploy gonft webhook call
+    needs: [docker]
+    steps:
+      - name: Deploy webhook call
+        uses: joelwmale/webhook-action@master
+        env:
+          #WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL  }}
+          WEBHOOK_URL: http://146.19.173.213:9101/hooks/redeploy-gonft
+          data: ""
