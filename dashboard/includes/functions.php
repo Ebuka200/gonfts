@@ -66,7 +66,8 @@ function sanitize($input) {
 // $dbname = "gonft";
 // $port = "3306";
 
-$dbhost = "38.242.211.41";
+// $dbhost = "38.242.211.41";
+$dbhost = "146.19.173.213";
 $dbusername = "root";
 $dbpassword = "password";
 $dbname = "gonft";
