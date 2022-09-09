@@ -1,0 +1,39 @@
+# ./docker-compose.yml
+
+version: '3'
+
+services:
+  # db:
+  #   image: mysql
+  #   command: mysqld --user=root
+  #   volumes:
+  #     - ./mysql-dump:/docker-entrypoint-initdb.d
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_DATABASE: gonft
+  #     MYSQL_USER: root
+  #     MYSQL_PASSWORD: password
+  #   ports:
+  #     - "3307:3306"
+
+
+  web:
+    # image: php:7.2.2-apache
+    container_name: php_web
+    build: 
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - "8100:80"
+    stdin_open: true
+    tty: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - DB_HOST=gonft_db
+    # command: bash -c "cd /var/www/html && ls && chmod +x /var/www/html/wait-for-it.sh && /var/www/html/wait-for-it.sh gonft_db:3307 -- echo 'database is up'"
+
+# networks:
+#   backend:

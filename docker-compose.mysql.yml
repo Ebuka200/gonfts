@@ -1,0 +1,21 @@
+# ./docker-compose.yml
+
+version: '3'
+
+services:
+  db:
+    container_name: gonft_db
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: gonft
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+    # networks:
+    #   - backend
