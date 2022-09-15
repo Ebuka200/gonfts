@@ -11,7 +11,7 @@
       $lastname = $_POST['lastname'];
       $username = $_POST['username'];
       $email = $_POST['email'];
-      $wallet = $_POST['wallet'];
+      // $wallet = $_POST['wallet'];
       $password =  $_POST['password'];
       $reflink = $_POST['reflink'];
       $ref_user = $_POST['refuser'];
@@ -254,7 +254,7 @@
                     type="text"
                     class="form-control"
                     name="lastname"
-                    placeholder="Enter your firstname"
+                    placeholder="Enter your lastname"
                     autofocus
                   />
                 </div>
@@ -275,14 +275,14 @@
                   <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" required />
                 </div>
 
-                 <div class="mb-3">
-                  <label for="wallet" class="form-label">Wallet Address</label>
-                  <input type="text" class="form-control" id="wallet" name="wallet" placeholder="Enter your wallet address" required />
-                </div>
+                 <!-- <div class="mb-3">
+                  <label for="wallet" class="form-label">Wallet Address (Optional)</label>
+                  <input type="text" class="form-control" id="wallet" name="wallet" placeholder="Enter your wallet address" />
+                </div> -->
 
                 <div class="mb-3 d-none">
-                  <label for="wallet" class="form-label">Referral Link</label>
-                  <input type="text" class="form-control" id="reflink" name="reflink" placeholder="Enter your refferal link" value="https://www.gonft.allansacuityltd.com/dashboard/register.php?username=ebukaonyekwere" required />
+                  <label for="wallet" class="form-label">Referral Link (Optional)</label>
+                  <input type="text" class="form-control" id="reflink" name="reflink" placeholder="Enter your refferal link" value="https://www.gonft.allansacuityltd.com/dashboard/register.php?username=ebukaonyekwere" />
                 </div>
 
                 <div class="mb-3">
@@ -292,7 +292,7 @@
                     $referred_by = $_GET['username'];
                     echo $referred_by;
                   }
-                  ?>" required />
+                  ?>" />
                 </div>
 
                 <div class="mb-3 form-password-toggle">
