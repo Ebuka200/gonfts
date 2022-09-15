@@ -254,7 +254,7 @@
                     type="text"
                     class="form-control"
                     name="lastname"
-                    placeholder="Enter your firstname"
+                    placeholder="Enter your lastname"
                     autofocus
                   />
                 </div>
@@ -292,7 +292,7 @@
                     $referred_by = $_GET['username'];
                     echo $referred_by;
                   }
-                  ?>" required />
+                  ?>" />
                 </div>
 
                 <div class="mb-3 form-password-toggle">
