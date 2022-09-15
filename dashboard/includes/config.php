@@ -10,7 +10,7 @@ include 'functions.php';
 define('DBHOST', '146.19.173.213');
 // define('DBHOST', 'gonft_db');
 define('DBUSER', 'root');
-define('DBPASS', 'password');
+define('DBPASS', 'gonft_password_123');
 define('DBNAME', 'gonft');
 define('DBPORT', '3306');
 
