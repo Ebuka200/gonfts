@@ -477,19 +477,19 @@ if(isset($_POST['submit'])){
                               <!-- /Account -->
                             </div>
                             <div class="card">
-                                <h5 class="card-header">BTC Address</h5>
+                                <h5 class="card-header">Wallet Address</h5>
                                 <div class="card-body">
                                 
                                       <div class="row">
                                         
                                           <div class="mb-3 col-md-12">
-                                            <label for="btc" class="form-label">btc address</label>
+                                            <label for="btc" class="form-label">Wallet address</label>
                                             <input
                                               class="form-control"
                                               type="text"
                                               id="btcaddress"
                                               name="walletaddress"
-                                              placeholder="BTC ADDRESS"
+                                              placeholder="Wallet ADDRESS"
                                               value="<?php echo $row['walletaddress'] ?>"
                                             />
                                           </div>
@@ -508,7 +508,7 @@ if(isset($_POST['submit'])){
                                           
                                             <div class="mb-3 form-password-toggle">
                                               <div class="d-flex justify-content-between">
-                                                <label class="form-label" for="password">OLD PASSWORD</label>
+                                                <label class="form-label" for="password">PASSWORD</label>
                                                 <!-- <a href="auth-forgot-password-basic.html">
                                                   <small>Forgot Password?</small>
                                                 </a> -->
@@ -528,7 +528,7 @@ if(isset($_POST['submit'])){
                                             </div>
 
 
-                                            <div class="mb-3 col-md-12">
+                                            <!-- <div class="mb-3 col-md-12">
                                                 <label for="btc" class="form-label">New Password</label>
                                                 <input
                                                   class="form-control"
@@ -547,7 +547,7 @@ if(isset($_POST['submit'])){
                                                     name="newpassword"
                                                     placeholder="*****"
                                                   />
-                                                </div>
+                                                </div> -->
                                             
                                                 <div class="mt-2">
                                                     <input type="submit" name="submit" value="Submit" class="btn btn-primary me-2">
