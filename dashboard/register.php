@@ -14,7 +14,7 @@
       // $wallet = $_POST['wallet'];
       $password =  $_POST['password'];
       $reflink = $_POST['reflink'];
-      $ref_user = $_POST['refuser'];
+      $ref_user = isset($_POST['refuser']) ? $_POST['refuser'] : NULL;
 
       $sql = "INSERT INTO accounts( firstname, lastname, username, email, walletaddress , password, reflink, referred_by) values('$firstname' , '$lastname' ,'$username', '$email' , '$wallet' , '$password','$reflink','$ref_user')";
       // $sql = "INSERT INTO productdetails(name) values('Brenda')";
@@ -254,7 +254,7 @@
                     type="text"
                     class="form-control"
                     name="lastname"
-                    placeholder="Enter your firstname"
+                    placeholder="Enter your lastname"
                     autofocus
                   />
                 </div>
@@ -292,7 +292,7 @@
                     $referred_by = $_GET['username'];
                     echo $referred_by;
                   }
-                  ?>" required />
+                  ?>" />
                 </div>
 
                 <div class="mb-3 form-password-toggle">
