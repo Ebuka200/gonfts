@@ -87,6 +87,8 @@ if (!(isset($_SESSION['username']))) {
             
         }
 
+    }else{
+      
     }
 
       if($session_query && $login_query){
@@ -119,11 +121,11 @@ if(isset($_POST['submit'])){
               $error = true;
 
               echo "<script>
-                      alert('Account registered successfully');
+                      alert('Withdrawal registered successfully');
                     </script>"; 
           }else {
               
-              echo "Accountt not added";
+              echo "Withdrawal not registered";
               echo mysqli_error($conn);
           }
         
