@@ -96,7 +96,7 @@
             <li class="menu-item ">
               <a href="plans.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-food-menu"></i>
-                <div data-i18n="Analytics">Our Plans</div>
+                <div data-i18n="Analytics">Investment Plans</div>
               </a>
             </li>
 

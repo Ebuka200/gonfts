@@ -186,7 +186,7 @@ if(isset($_POST['submit'])){
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard - </title>
 
     <meta name="description" content="" />
 
@@ -249,8 +249,8 @@ if(isset($_POST['submit'])){
                 </a>
               </div>
 
-              <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                <!-- Search -->
+              <!-- <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                Search
                 <div class="navbar-nav align-items-center">
                   <div class="nav-item d-flex align-items-center">
                     <i class="bx bx-search fs-4 lh-0"></i>
@@ -262,7 +262,7 @@ if(isset($_POST['submit'])){
                     />
                   </div>
                 </div>
-                <!-- /Search -->
+                /Search -->
 
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                   <!-- Place this tag where you want the button to render. -->
@@ -279,7 +279,7 @@ if(isset($_POST['submit'])){
                   </li> -->
 
                   <!-- User -->
-                  <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <!-- <li class="nav-item navbar-dropdown dropdown-user dropdown">
                     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                       <div class="avatar avatar-online">
                         <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
@@ -335,7 +335,7 @@ if(isset($_POST['submit'])){
                         </a>
                       </li>
                     </ul>
-                  </li>
+                  </li> -->
                   <!--/ User -->
                 </ul>
               </div>
@@ -418,7 +418,7 @@ if(isset($_POST['submit'])){
                           <span>Balance</span>
                           <h3 class="card-title text-nowrap mb-1">$<?php echo $row['balance'] ?></h3>
                           
-                            <small class="text-success fw-semibold">Lean More<i class="bx bx-right-arrow-alt"></i></small>
+                            <!-- <small class="text-success fw-semibold">Lean More<i class="bx bx-right-arrow-alt"></i></small> -->
                             
                           
                         </div>
@@ -439,7 +439,7 @@ if(isset($_POST['submit'])){
                           </div>
                           <span>Earnings</span>
                           <h3 class="card-title text-nowrap mb-1">$<?php echo $row['earnings'] ?></h3>
-                          <small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small>
+                          <!-- <small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small> -->
                         </div>
                       </div>
                     </div>
@@ -456,9 +456,9 @@ if(isset($_POST['submit'])){
                             </div>
                            
                           </div>
-                          <span>Current Plan</span>
+                          <span>Active Plan</span>
                           <h3 class="card-title text-nowrap mb-1"><?php echo $row['current_plan'] ?></h3>
-                          <small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small>
+                          <!-- <small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small> -->
                         </div>
                       </div>
                     </div>
@@ -781,7 +781,7 @@ if(isset($_POST['submit'])){
 
 
        }else if(crypto == "ethereum"){
-            $.get("https://api.coindesk.com/v1/bpi/currentprice/USD.json", (res) => {
+            $.get("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD", (res) => {
 
                 let btcPrice = JSON.parse(res).bpi.USD.rate_float;
                 let userAmount = document.getElementById('amount').value;

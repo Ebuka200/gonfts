@@ -399,7 +399,7 @@ if(isset($_POST['submit'])){
                         <h5 class="card-header">Profile Details</h5>
                         <!-- Account -->
                         <div class="card-body">
-                          <div class="d-flex align-items-start align-items-sm-center gap-4">
+                          <!-- <div class="d-flex align-items-start align-items-sm-center gap-4">
                             <img
                               src="assets/img/avatars/1.png"
                               alt="user-avatar"
@@ -407,8 +407,8 @@ if(isset($_POST['submit'])){
                               height="100"
                               width="100"
                               id="uploadedAvatar"
-                            />
-                            <div class="button-wrapper">
+                            /> -->
+                            <!-- <div class="button-wrapper">
                               <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new photo</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
@@ -422,7 +422,7 @@ if(isset($_POST['submit'])){
                               </label>
                               
                               <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                         <hr class="my-0" />
@@ -477,7 +477,7 @@ if(isset($_POST['submit'])){
                               <!-- /Account -->
                             </div>
                             <div class="card">
-                                <h5 class="card-header">Wallet Address</h5>
+                                <h5 class="card-header">Token Address</h5>
                                 <div class="card-body">
                                 
                                       <div class="row">
