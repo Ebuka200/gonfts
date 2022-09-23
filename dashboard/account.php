@@ -396,7 +396,7 @@ if(isset($_POST['submit'])){
                   <form role="form" action="account.php" method="post" enctype="multipart/form-data">
 
                       <div class="card mb-4">
-                        <h5 class="card-header">Profile Details</h5>
+                        <!-- <h5 class="card-header">Profile Details</h5> -->
                         <!-- Account -->
                         <div class="card-body">
                           <!-- <div class="d-flex align-items-start align-items-sm-center gap-4">
