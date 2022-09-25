@@ -372,7 +372,7 @@ if (!(isset($_SESSION['username']))) {
                                 <tbody>
                                     <?php
                                     
-                                        $sql = "SELECT * FROM transactions WHERE username = '$username'";
+                                        $sql = "SELECT * FROM transactions WHERE username = '$username' LIMIT 30";
                                         $result = mysqli_query($conn, $sql);
 
                                         while($row = mysqli_fetch_assoc($result)){

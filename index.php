@@ -726,15 +726,7 @@ if(isset($_POST['submit'])){
                 <div class="col-lg-6 col-md-6">
                     <h4 class="text-light mb-4">GONFTs</h4>
                     <p class="mb-2">The world’s first and largest digital marketplace for<br> crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.</p>
-                    <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>972-998 N Lamer St, Burbank, CA 91506, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+174-730-83545</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@example.com</p> -->
-                    <!-- <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div> -->
+                   
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Useful Links</h4>

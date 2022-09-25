@@ -84,7 +84,7 @@
           $error = true;
 
           echo "<script> alert('Account registered successfully'); </script>"; 
-          // header("Location: login.php"); 
+          header("Location: login.php"); 
       }else { 
           echo "Accountt not added";
           echo mysqli_error($conn);

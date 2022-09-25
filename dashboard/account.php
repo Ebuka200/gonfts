@@ -427,7 +427,7 @@ if(isset($_POST['submit'])){
                         </div>
                         <hr class="my-0" />
                         <?php 
-            
+                                        
                             // $flag = false;
                             $query = "SELECT * FROM accounts WHERE username = '$username' ";
                             $result = mysqli_query($conn, $query);
