@@ -37,16 +37,16 @@ if(isset($_POST['submit'])){
         $id = $_POST['id'];
         $date = date("Y-m-d");
 
-        $sql = "SELECT balance FROM accounts WHERE username='$username'";
+        $sql = "SELECT earnings FROM accounts WHERE username='$username'";
 
         $query = mysqli_query($conn, $sql);
 
         if($query){
             while ($row = mysqli_fetch_assoc($query)){
-                $balance = $row['balance'];
+                $balance = $row['earnings'];
                 $sum = $balance - $ammount;
                 $sql1 = "UPDATE withdrawal SET status='approved' WHERE id='$id'";
-                $sql2 = "UPDATE accounts SET balance='$sum' WHERE username='$username'";
+                $sql2 = "UPDATE accounts SET earnings='$sum' WHERE username='$username'";
                 $sql3 = "INSERT INTO transactions( date, description, amount,username) values('$date' , 'WITHDRAWAL', '$ammount','$username')";
 
 
