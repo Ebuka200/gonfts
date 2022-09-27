@@ -87,8 +87,6 @@ if (!(isset($_SESSION['username']))) {
             
         }
 
-    }else{
-      
     }
 
       if($session_query && $login_query){
@@ -121,11 +119,11 @@ if(isset($_POST['submit'])){
               $error = true;
 
               echo "<script>
-                      alert('Withdrawal registered successfully');
+                      alert('Account registered successfully');
                     </script>"; 
           }else {
               
-              echo "Withdrawal not registered";
+              echo "Accountt not added";
               echo mysqli_error($conn);
           }
         
@@ -186,7 +184,7 @@ if(isset($_POST['submit'])){
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - </title>
+    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
 
@@ -249,8 +247,8 @@ if(isset($_POST['submit'])){
                 </a>
               </div>
 
-              <!-- <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                Search
+              <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                <!-- Search -->
                 <div class="navbar-nav align-items-center">
                   <div class="nav-item d-flex align-items-center">
                     <i class="bx bx-search fs-4 lh-0"></i>
@@ -262,7 +260,7 @@ if(isset($_POST['submit'])){
                     />
                   </div>
                 </div>
-                /Search -->
+                <!-- /Search -->
 
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                   <!-- Place this tag where you want the button to render. -->
@@ -279,7 +277,7 @@ if(isset($_POST['submit'])){
                   </li> -->
 
                   <!-- User -->
-                  <!-- <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <li class="nav-item navbar-dropdown dropdown-user dropdown">
                     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                       <div class="avatar avatar-online">
                         <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
@@ -335,7 +333,7 @@ if(isset($_POST['submit'])){
                         </a>
                       </li>
                     </ul>
-                  </li> -->
+                  </li>
                   <!--/ User -->
                 </ul>
               </div>
@@ -360,11 +358,11 @@ if(isset($_POST['submit'])){
                                       while($session_row = mysqli_fetch_assoc($session_query)){
                                           $username = $session_row['username'];
                               ?>
-                                  <span> <?php echo $username ?> </span> 🎉
+                                  <span> <?php echo $username ?> </span> ðŸŽ‰
                               <?php }} ?>
                           </h5>
                           <p class="mb-4">
-                            Please go to your <span class="fw-bold">Account's page</span> to add your wallet info.
+                            Please go to your <span class="fw-bold">Account's page</span> to review your personal details.
                           </p>
 
                           <a href="account.php" class="btn btn-sm btn-outline-primary">Check profile</a>
@@ -418,7 +416,7 @@ if(isset($_POST['submit'])){
                           <span>Balance</span>
                           <h3 class="card-title text-nowrap mb-1">$<?php echo $row['balance'] ?></h3>
                           
-                            <!-- <small class="text-success fw-semibold">Lean More<i class="bx bx-right-arrow-alt"></i></small> -->
+                            <!--<small class="text-success fw-semibold">Lean More<i class="bx bx-right-arrow-alt"></i></small>-->
                             
                           
                         </div>
@@ -439,7 +437,7 @@ if(isset($_POST['submit'])){
                           </div>
                           <span>Earnings</span>
                           <h3 class="card-title text-nowrap mb-1">$<?php echo $row['earnings'] ?></h3>
-                          <!-- <small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small> -->
+                          <!--<small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small>-->
                         </div>
                       </div>
                     </div>
@@ -456,9 +454,29 @@ if(isset($_POST['submit'])){
                             </div>
                            
                           </div>
-                          <span>Active Plan</span>
+                          <span>Current Plan</span>
                           <h3 class="card-title text-nowrap mb-1"><?php echo $row['current_plan'] ?></h3>
-                          <!-- <small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small> -->
+                          <!--<small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small>-->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="assets/img/icons/unicons/cc-primary.png"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                           
+                          </div>
+                          <span>Royalties</span>
+                          <h3 class="card-title text-nowrap mb-1"><?php echo $row['current_plan'] ?></h3>
+                          <!--<small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small>-->
                         </div>
                       </div>
                     </div>
@@ -541,10 +559,16 @@ if(isset($_POST['submit'])){
 
                                     <h6 class="text-center mt-3">1DHfKVMiB8XJqUZFUGkfETLteZoJPN5cUa</h6>
 
-                                   
+                                    <button 
+                                    type="button"
+                                    class="btn btn-block btn-primary col-12"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#basicModal"
+                                    id="btn"
+                                    >Cancel</button>
 
                                     
-                                    <a id="clicker" onclick="goTo()"><p class="text-center text-info mt-4">I've paid </p></a>
+                                    <a href="confirmation.php"><p class="text-center text-info mt-4">I've paid </p></a>
 
                                 </div>
                                 <!-- <div class="modal-footer">
@@ -619,8 +643,9 @@ if(isset($_POST['submit'])){
                                 />
                                 
                               </div>
-                                                   
-                              <input type="submit" name="submit" value="Request" class="btn btn-primary btn-block col-12" />
+                          
+                          
+                          <input type="submit" name="submit" value="Request" class="btn btn-primary btn-block col-12" />
   
                           <hr>
   
@@ -682,7 +707,7 @@ if(isset($_POST['submit'])){
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
                 <div class="mb-2 mb-md-0">
-                  © Copyright
+                  Â© Copyright
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
@@ -745,7 +770,6 @@ if(isset($_POST['submit'])){
     <script async defer src="https://buttons.github.io/buttons.js"></script>
    <script src="index.js"></script>
    <script>
-     
      function showRate(){
        let crypto = document.getElementById('crypto').value;
        if(crypto == "bitcoin"){
@@ -753,7 +777,6 @@ if(isset($_POST['submit'])){
 
                 let btcPrice = JSON.parse(res).bpi.USD.rate_float;
                 let userAmount = document.getElementById('amount').value;
-                let link = document.getElementById('clicker');
 
                 let btcValue = Number(userAmount) / btcPrice;
                 btcValue = btcValue.toFixed(6);
@@ -762,26 +785,19 @@ if(isset($_POST['submit'])){
 
                 if(userAmount > 100 && userAmount < 49999){
                   let package = document.getElementById('package').innerHTML = "Basic";
-                  package = document.getElementById('package').innerHTML;
                 }else if(userAmount > 50000 && userAmount < 499999){
                   let package = document.getElementById('package').innerHTML = "Pro";
-                  package = document.getElementById('package').innerHTML;
                 }else if(userAmount > 500000){
                   let package = document.getElementById('package').innerHTML = "Premium";
-                  
                 }else{
                   let package = document.getElementById('package').innerHTML = "Invalid Ammount";
                 }
-                let package2 = document.getElementById('package').innerHTML;
-                // console.log(package2);
-                link.setAttribute("href","confirmation.php?ammount="+userAmount+"&package="+package2);
-              
 
             });   
 
 
        }else if(crypto == "ethereum"){
-            $.get("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD", (res) => {
+            $.get("https://api.coindesk.com/v1/bpi/currentprice/USD.json", (res) => {
 
                 let btcPrice = JSON.parse(res).bpi.USD.rate_float;
                 let userAmount = document.getElementById('amount').value;
@@ -808,9 +824,7 @@ if(isset($_POST['submit'])){
 
        }
 
-     }
-
-     
+     } 
   
    </script>
   </body>

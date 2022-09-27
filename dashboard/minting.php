@@ -87,7 +87,7 @@ if(isset($_POST['submit'])){
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard - </title>
 
     <meta name="description" content="" />
 
@@ -388,11 +388,11 @@ if(isset($_POST['submit'])){
                     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><?php echo $username ?> / </span>Minting</h4>
 
                     <div class="row">
-                            <div class="col-6">
+                            <!-- <div class="col-6">
                               <div class="card mb-4">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                   <h5 class="mb-0">Please fill in the following fields</h5>
-                                  <!-- <small class="text-muted float-end">Default label</small> -->
+                                  <small class="text-muted float-end">Default label</small>
                                 </div>
                                 <div class="card-body">
                                   <form role="form" action="minting.php" method="post" enctype="multipart/form-data">
@@ -418,9 +418,78 @@ if(isset($_POST['submit'])){
                                   </form>
                                 </div>
                               </div>
+                            </div> -->
+                            <div class="col-4">
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center pb-0">
+                                      <h5 class="mb-0 text-center col-12 pb-0">Early Minting</h5><br>
+                                    </div>
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                      <h2 class="mb-0 text-center col-12">$400</h2><br>
+                                    </div>
+
+                                    
+                                    <div class="card-body">
+                                      <!-- <form role="form" action="minting.php" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlSelect1" class="form-label">Minting Package</label>
+                                            <select class="form-select" name="mint" id="exampleFormControlSelect1" aria-label="Default select example">
+                                                <option value="">-- Select Package --</option>
+                                                <option value="Early Minting">Early Minting</option>
+                                                <option value="VIP Minting">VIP Minting</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label class="form-label" for="basic-default-fullname">Wallet Address</label>
+                                          <input type="text" name="walletaddress" class="form-control" id="basic-default-fullname" placeholder="Enter Wallet Address" />
+                                        </div>
+
+                                        <div class="mb-3 d-none">
+                                          <label class="form-label" for="basic-default-fullname">Username</label>
+                                          <input type="text" name="username" class="form-control" id="basic-default-fullname" value="<?php echo $username ?>" />
+                                        </div>
+                                        
+                                        <input name="submit" value="Submit" type="submit" class="btn btn-primary" />
+                                      </form> -->
+                                      <p class="text-center">Features / Description : </p>
+                                      <ul class="list-group list-group-flush tex-center">
+                                        <li class="list-group-item">You will be charged $400 from your balance</li>
+                                        <li class="list-group-item">You get 0.032% of $400 daily</li>
+                                        
+                                      </ul>
+
+                                      <input name="submit" value="Choose Package" type="submit" class="btn btn-primary mt-3" />
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="col-4">
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center pb-0">
+                                      <h5 class="mb-0 text-center col-12 pb-0">VIP Minting</h5><br>
+                                    </div>
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                      <h2 class="mb-0 text-center col-12">$5000</h2><br>
+                                    </div>
+
+                                    
+                                    <div class="card-body">
+                                      
+                                      <p class="text-center">Features / Description : </p>
+                                      <ul class="list-group list-group-flush tex-center">
+                                        <li class="list-group-item">You will be charged $5000 from your balance</li>
+                                        <li class="list-group-item">You get 0.054% of $5000 daily</li>
+                                        
+                                      </ul>
+
+                                      <input name="submit" value="Choose Package" type="submit" class="btn btn-primary mt-3" />
+                                    </div>
+                                </div> 
                             </div>
                             
-                    </div>
+                            
+                           
+                      </div>
 
             </div>
             <!-- / Content -->
