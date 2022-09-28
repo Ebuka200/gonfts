@@ -361,7 +361,7 @@ if (!(isset($_SESSION['username']))) {
                                         <th>USERNAME</th>                          
                                         <th>IMAGE</th>                          
                                         <!-- <th>AMOUNT</th>       -->
-                                        <th>CURRENT PACKAGE</th>      
+                                        <!-- <th>CURRENT PACKAGE</th>       -->
                                         <th>STATUS</th>      
                                         <th>ACTION</th>    
                                                               
@@ -384,12 +384,12 @@ if (!(isset($_SESSION['username']))) {
                                             <td><?php echo $row['username'] ?></td>
                                             <td><?php echo $row['image'] ?></td>
                                             <!-- <td>$<?php echo $row['ammount'] ?></td>                                       -->
-                                            <td><?php
+                                            <!-- <td><?php
                                               $username = $row['username'];
                                               $sql2 = "SELECT current_plan from accounts WHERE username = '$username'";
                                               $result2 = mysqli_query($conn, $sql2);
                                               $plan_row = mysqli_fetch_assoc($result2);
-                                              echo $plan_row['current_plan'] ?></td> 
+                                              echo $plan_row['current_plan'] ?></td>  -->
                                             <td><?php echo $row['status'] ?></td>
                                      
                                             <td>

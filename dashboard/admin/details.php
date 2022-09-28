@@ -35,69 +35,26 @@ if(isset($_POST['submit'])){
    
 
     if(isset($err_flag) && $err_flag === false){
-        $id = $_GET['id'];
+
         $username = $_POST['username'];
         $ammount = $_POST['ammount'];
         $package = $_POST['package'];
         $date = date("Y-m-d");
 
-        $sql = "SELECT * FROM accounts WHERE username='$username'";
+        $sql = "SELECT balance FROM accounts WHERE username='$username'";
 
         $query = mysqli_query($conn, $sql);
 
         if($query){
             while ($row = mysqli_fetch_assoc($query)){
                 $balance = $row['balance'];
-                $ref_user = $row['referred_by'];
                 echo $balance;
                 $sum = $balance + $ammount;
                 $sql1 = "UPDATE requests SET ammount='$ammount' WHERE username='$username'";
                 $sql2 = "UPDATE accounts SET balance='$sum' WHERE username='$username'";
                 $sql3 = "UPDATE accounts SET current_plan='$package' WHERE username='$username'";
-                $sql4 = "UPDATE requests SET status='approved' WHERE id='$id'";
-                $sql5 = "INSERT INTO transactions( date, description, amount,username) values('$date' , 'CREDIT' ,'$ammount','$username')";
+                $sql4 = "INSERT INTO transactions( date, description, amount,username) values('$date' , 'CREDIT' ,'$ammount','$username')";
 
-                if($row['deposit_status'] == "no"){
-                  $arrayVariable = array(
-                    "5" => 5,
-                    "4" => 3,
-                    "3" => 2,
-                    "2" => 1,
-                    "1" => 1
-                  );
-                  $username_count = $ref_user;
-                  $referral_total = 0;
-                  for($x=5;$x>0;$x--){
-                      print_r($arrayVariable[$x]);
-                      print_r($username_count);        
-                      $sql = "SELECT * FROM accounts WHERE username = '$username_count' ORDER BY id DESC";
-                      $result = mysqli_query($conn, $sql);
-                      //add if statement to check if it's return num_row()
-                      $row = mysqli_fetch_assoc($result);
-                      // while(){
-                        // echo $row['referred_by'];
-                        print_r($row['referred_by']);
-                         // Subtract percentage amount with default amount
-                         $referral_bonus = ($arrayVariable[$x] / 100) * $ammount;
-                         $referral_total = $referral_total + $referral_bonus;
-                         // Update current user with appropriate percententage amount
-                         $row['referral_bonus'] = $referral_bonus + intval($row['referral_bonus']);
-                         print_r($row['referral_bonus']);
-                         $referral_bonus = $row['referral_bonus'];
-                         $update_sql = "UPDATE accounts SET referral_bonus='$referral_bonus' WHERE username = '$username_count' ";
-                         $update_query = mysqli_query($conn, $update_sql);
-                         $username_count = $row['referred_by'];
-                        if(is_null($row['referred_by'])){
-                          break;
-                        }else{
-                         
-                        }
-                      // } 
-                    }
-
-                    $sql9 = "UPDATE accounts SET deposit_status='yes' WHERE username='$username'";
-                    $query9 = mysqli_query($conn, $sql9);
-                }
 
                 $query1 = mysqli_query($conn, $sql1);
                 $query2 = mysqli_query($conn, $sql2);
@@ -506,33 +463,30 @@ if(isset($_POST['submit'])){
                                     </div>
 
                                     <div class="col-3 ">
-                                      <div class="mb-3">
-                                          <label for="exampleFormControlSelect1" class="form-label">Choose Plan</label>
-                                          <input
-                                                type="text"
-                                                class="form-control"
-                                                id="defaultFormControlInput"
-                                                placeholder="John Doe"
-                                                aria-describedby="defaultFormControlHelp"
-                                                name="package"
-                                                value="<?php echo $package ?>"
-                                            />
-                                      </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlSelect1" class="form-label">Choose Plan</label>
+                                        <select class="form-select" name="package" id="exampleFormControlSelect1" aria-label="Default select example">
+                                            <option value="">
+                                                <?php echo $package ?>
+                                            </option>
+                                            <option value="Basic">Basic</option>
+                                            <option value="Pro">Pro</option>
+                                            <option value="Premium">Premium</option>
+                                        </select>
+                                    </div>
                                     </div>
                                     
                                     
-                                    <div class="col-3 ">
+                                    <div class="col-4 ">
                                         <div class="mb-3">
-                                                <label for="" class="mb-2 text-info"> Amount</label>
+                                                <label for="" class="mb-2 text-danger">Please Enter Amount Paid (in USD)</label>
                                                 <input
                                                     type="text"
                                                     class="form-control"
                                                     id="defaultFormControlInput"
-                                                    placeholder="John Doe"
+                                                    placeholder="Enter Ammount"
                                                     aria-describedby="defaultFormControlHelp"
                                                     name="ammount"
-                                                    value="<?php echo $ammount ?>"
-
                                                 />
                                                 
                                         </div>
@@ -540,7 +494,7 @@ if(isset($_POST['submit'])){
 
                                 </div>
                                 <div class="mb-3 col-6">
-                                    <input href="" class="btn btn-primary d-grid w-100" type="submit" name="submit" value="Confirm"/>
+                                    <input href="" class="btn btn-primary d-grid w-100" type="submit" name="submit" value="Update"/>
                                 </div>
 
                             </form>    
@@ -589,9 +543,27 @@ if(isset($_POST['submit'])){
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                 
+                  <!--, made with ❤️ by-->
+                  <!--<a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>-->
                 </div>
-               
+                <!--<div>-->
+                <!--  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>-->
+                <!--  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>-->
+
+                <!--  <a-->
+                <!--    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"-->
+                <!--    target="_blank"-->
+                <!--    class="footer-link me-4"-->
+                <!--    >Documentation</a-->
+                <!--  >-->
+
+                <!--  <a-->
+                <!--    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"-->
+                <!--    target="_blank"-->
+                <!--    class="footer-link me-4"-->
+                <!--    >Support</a-->
+                <!--  >-->
+                <!--</div>-->
               </div>
             </footer>
             <!-- / Footer -->

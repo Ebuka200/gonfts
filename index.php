@@ -82,7 +82,19 @@ if(isset($_POST['submit'])){
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-
+<!--Start of Tawk.to Script-->
+<!--<script type="text/javascript">-->
+<!--var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();-->
+<!--(function(){-->
+<!--var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];-->
+<!--s1.async=true;-->
+<!--s1.src='https://embed.tawk.to/62f06b8b54f06e12d88d6ceb/1g9ti87eh';-->
+<!--s1.charset='UTF-8';-->
+<!--s1.setAttribute('crossorigin','*');-->
+<!--s0.parentNode.insertBefore(s1,s0);-->
+<!--})();-->
+<!--</script>-->
+<!--End of Tawk.to Script-->
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -95,8 +107,9 @@ if(isset($_POST['submit'])){
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 sticky-top p-0" style="border-top: rgb(2, 2, 139)">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5" style="background-color: rgb(2, 2, 139);">
-            <h2 class="mb-2 text-white">NFTs</h2>
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <!--<h2 class="mb-2 text-white">NFTs</h2>-->
+            <img src="img/logo.jpeg" width="100%" height="100%"/>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -113,11 +126,11 @@ if(isset($_POST['submit'])){
                             </div>
                     </div>         -->
                 <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#liveauctions" class="nav-item nav-link">Auctions</a>
+                <!--<a href="#liveauctions" class="nav-item nav-link">Auctions</a>-->
                 <!-- <a href="#collections" class="nav-item nav-link">Collections</a> -->
                 <a href="#category" class="nav-item nav-link">Category</a>
-                <a href="#artists" class="nav-item nav-link">Artists</a>
-                <a href="dashboard/" class="nav-item nav-link">Sign In</a>
+                <!--<a href="#artists" class="nav-item nav-link">Artists</a>-->
+                <a href="dashboard/login.php" class="nav-item nav-link">Sign In</a>
                 
                 <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
             </div>
@@ -148,21 +161,21 @@ if(isset($_POST['submit'])){
                                 
                             </div>
                             <div class="col-10 col-lg-5  d-none d-lg-block">
-                                <div class="row  align-items-center">
-                                    <div class="col-sm-6">
-                                        <div class="bg-primary mb-4 wow fadeIn" data-wow-delay="0.3s">
-                                                <img src="img/1.jpg" alt="" height="100%" width="100%">
-                                        </div>
-                                        <div class="bg-secondary wow fadeIn" data-wow-delay="0.5s">
-                                            <img src="img/3.jpg" alt="" height="100%" width="100%">
-                                        </div>
+                                    <div class="row  align-items-center">
+                                            <div class="col-sm-6">
+                                                <div class="bg-primary mb-4 wow fadeIn" data-wow-delay="0.3s">
+                                                        <img src="img/1.jpg" alt="" height="100%" width="100%">
+                                                </div>
+                                                <div class="bg-secondary wow fadeIn" data-wow-delay="0.5s">
+                                                    <img src="img/3.jpg" alt="" height="100%" width="100%">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="bg-success wow fadeIn" data-wow-delay="0.7s" style="height: 270px">
+                                                   <img src="img/2.jpg" alt="" height="100%" width="100%">
+                                                </div>
+                                            </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="bg-success wow fadeIn" data-wow-delay="0.7s" style="height: 270px">
-                                            <img src="img/2.jpg" alt="" height="100%" width="100%">
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -185,7 +198,7 @@ if(isset($_POST['submit'])){
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                     <?php
                                         
-                        $sql = "SELECT * FROM nfts";
+                        $sql = "SELECT * FROM nfts LIMIT 3";
                         
                         $result = mysqli_query($conn, $sql);
                         while($row = mysqli_fetch_assoc($result)){
@@ -199,11 +212,11 @@ if(isset($_POST['submit'])){
                             <div class="col-md-6 col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
                                     <!-- <div class="service-item p-4"> -->
                                         <div class="overflow-hidden mb-4">
-                                            <a href="product.html"><img class="img" src="dashboard/<?php echo $newstring[1] ?>" alt="" height="250px" width="100%"></a> 
+                                            <a><img class="img" src="dashboard/<?php echo $newstring[1] ?>" alt="" height="250px" width="100%"></a> 
                                         </div>
                                         <span class="badge bg-dark mb-2"><?php echo $row['category'] ?></span>
-                                        <a href="product.html"><h4 class="mb-3"><?php echo $row['name'] ?></h4></a> 
-                                        <a href=""><p class="bagde p-2 text-info"><?php echo $row['link'] ?></p></a>
+                                        <a href="#"><h4 class="mb-3"><?php echo $row['name'] ?></h4></a> 
+                                        <a href="<?php echo $row['link'] ?>"><p class="bagde p-2 text-info"><?php echo substr($row['link'],0, 30) ?></p></a>
                                         <!-- <a class="btn-slide mt-2" href="service.html"><i class="fa fa-arrow-right"></i><span>Read More</span></a> -->
                                     <!-- </div> -->
                             </div>
@@ -541,178 +554,178 @@ if(isset($_POST['submit'])){
 <!-- About End -->
 
 
-    <!-- <div id="artists" class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="text-left">
-                <h6 class="text-secondary text-uppercase">Testimonial</h6>
-                <h1 class="mb-0 px-4">Top Artists</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item p-4 my-5">
-                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
-                    <div class="d-flex align-items-end mb-4">
-                        <img class="img flex-shrink-0" src="img/lisa.jpg" style="width: 60px; height: 60px;border-radius: 100%">
-                        <div class="ms-4">
-                            <h5 class="mb-1">Lisa Green</h5>
-                            <p class="m-0">7 collections</p>
-                        </div>
-                    </div>
-                    <div class="row  align-items-center">
+    <!--<div id="artists" class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+    <!--    <div class="container py-5">-->
+    <!--        <div class="text-left">-->
+                <!-- <h6 class="text-secondary text-uppercase">Testimonial</h6> -->
+    <!--            <h1 class="mb-0 px-4">Top Artists</h1>-->
+    <!--        </div>-->
+    <!--        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">-->
+    <!--            <div class="testimonial-item p-4 my-5">-->
+    <!--                <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>-->
+    <!--                <div class="d-flex align-items-end mb-4">-->
+    <!--                    <img class="img flex-shrink-0" src="img/lisa.jpg" style="width: 60px; height: 60px;border-radius: 100%">-->
+    <!--                    <div class="ms-4">-->
+    <!--                        <h5 class="mb-1">Lisa Green</h5>-->
+    <!--                        <p class="m-0">7 collections</p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--                <div class="row  align-items-center">-->
                        
-                        <div class="col-12">
-                            <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 20px">
-                               <i class="fa fa-plus"></i>
-                               Follow
-                            </div>
-                        </div>
+    <!--                    <div class="col-12">-->
+    <!--                        <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 20px">-->
+    <!--                           <i class="fa fa-plus"></i>-->
+    <!--                           Follow-->
+    <!--                        </div>-->
+    <!--                    </div>-->
                        
-                    </div>
-                </div>
-                <div class="testimonial-item p-4 my-5">
-                        <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
-                        <div class="d-flex align-items-end mb-4">
-                            <img class="img flex-shrink-0" src="img/seekers.jpg" style="width: 60px; height: 60px;border-radius: 100%">
-                            <div class="ms-4">
-                                <h5 class="mb-1">Seekers</h5>
-                                <p class="m-0">2 Collections</p>
-                            </div>
-                        </div>
-                        <div class="row  align-items-center">
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="testimonial-item p-4 my-5">-->
+    <!--                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>-->
+    <!--                    <div class="d-flex align-items-end mb-4">-->
+    <!--                        <img class="img flex-shrink-0" src="img/seekers.jpg" style="width: 60px; height: 60px;border-radius: 100%">-->
+    <!--                        <div class="ms-4">-->
+    <!--                            <h5 class="mb-1">Seekers</h5>-->
+    <!--                            <p class="m-0">2 Collections</p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="row  align-items-center">-->
                            
-                                <div class="col-12">
-                                        <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 30px">
-                                           <i class="fa fa-plus"></i>
-                                           Follow
-                                        </div>
-                                </div>
+    <!--                            <div class="col-12">-->
+    <!--                                    <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 30px">-->
+    <!--                                       <i class="fa fa-plus"></i>-->
+    <!--                                       Follow-->
+    <!--                                    </div>-->
+    <!--                            </div>-->
                            
-                        </div>
-                </div>
+    <!--                    </div>-->
+    <!--            </div>-->
                
-                <div class="testimonial-item p-4 my-5">
-                        <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
-                        <div class="d-flex align-items-end mb-4">
-                            <img class="img flex-shrink-0" src="img/clubber.jpg" style="width: 60px; height: 60px;border-radius: 100%">
-                            <div class="ms-4">
-                                <h5 class="mb-1">Clubber</h5>
-                                <p class="m-0">2 Collections</p>
-                            </div>
-                        </div>
-                        <div class="row  align-items-center">
+    <!--            <div class="testimonial-item p-4 my-5">-->
+    <!--                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>-->
+    <!--                    <div class="d-flex align-items-end mb-4">-->
+    <!--                        <img class="img flex-shrink-0" src="img/clubber.jpg" style="width: 60px; height: 60px;border-radius: 100%">-->
+    <!--                        <div class="ms-4">-->
+    <!--                            <h5 class="mb-1">Clubber</h5>-->
+    <!--                            <p class="m-0">2 Collections</p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="row  align-items-center">-->
                            
-                                <div class="col-12">
-                                        <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 30px">
-                                           <i class="fa fa-plus"></i>
-                                           Follow
-                                        </div>
-                                </div>
+    <!--                            <div class="col-12">-->
+    <!--                                    <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 30px">-->
+    <!--                                       <i class="fa fa-plus"></i>-->
+    <!--                                       Follow-->
+    <!--                                    </div>-->
+    <!--                            </div>-->
                            
-                        </div>
-                </div>
-                <div class="testimonial-item p-4 my-5">
-                        <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
-                        <div class="d-flex align-items-end mb-4">
-                            <img class="img flex-shrink-0" src="img/moondust.jpg" style="width: 60px; height: 60px;border-radius: 100%">
-                            <div class="ms-4">
-                                <h5 class="mb-1">Moon Dust</h5>
-                                <p class="m-0">2 Collections</p>
-                            </div>
-                        </div>
-                        <div class="row align-items-center">
+    <!--                    </div>-->
+    <!--            </div>-->
+    <!--            <div class="testimonial-item p-4 my-5">-->
+    <!--                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>-->
+    <!--                    <div class="d-flex align-items-end mb-4">-->
+    <!--                        <img class="img flex-shrink-0" src="img/moondust.jpg" style="width: 60px; height: 60px;border-radius: 100%">-->
+    <!--                        <div class="ms-4">-->
+    <!--                            <h5 class="mb-1">Moon Dust</h5>-->
+    <!--                            <p class="m-0">2 Collections</p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="row align-items-center">-->
                            
-                            <div class="col-12">
-                                <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 30px">
-                                    <i class="fa fa-plus"></i>
-                                    Follow
-                                </div>
-                            </div>
+    <!--                        <div class="col-12">-->
+    <!--                            <div class="btn btn-outline-success wow fadeIn p-2 text-center" data-wow-delay="0.7s" style="height:45px; width: 100%; border-radius: 30px">-->
+    <!--                                <i class="fa fa-plus"></i>-->
+    <!--                                Follow-->
+    <!--                            </div>-->
+    <!--                        </div>-->
                            
-                        </div>
-                </div>
+    <!--                    </div>-->
+    <!--            </div>-->
                
               
-            </div>
-        </div>
-    </div> -->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
 
     <!-- Team Start -->
-    <!-- <div class="container-xxl py-5">
-        <div class="container py-5">
-            <div class="text-left wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-5">Rescources & News</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item p-0">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/news1.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
-                        <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <div class="btn-slide mt-1">
-                            <i class="fa fa-share"></i>
-                            <span>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item p-0">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/news2.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
-                        <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <div class="btn-slide mt-1">
-                            <i class="fa fa-share"></i>
-                            <span>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item p-0">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/news3.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
-                        <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <div class="btn-slide mt-1">
-                            <i class="fa fa-share"></i>
-                            <span>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item p-0">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/news4.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>
-                        <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>
-                        <div class="btn-slide mt-1">
-                            <i class="fa fa-share"></i>
-                            <span>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    <!--<div class="container-xxl py-5">-->
+    <!--    <div class="container py-5">-->
+    <!--        <div class="text-left wow fadeInUp" data-wow-delay="0.1s">-->
+    <!--            <h1 class="mb-5">Rescources & News</h1>-->
+    <!--        </div>-->
+    <!--        <div class="row g-4">-->
+    <!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">-->
+    <!--                <div class="team-item p-0">-->
+    <!--                    <div class="overflow-hidden mb-4">-->
+    <!--                        <img class="img-fluid" src="img/news1.jpg" alt="">-->
+    <!--                    </div>-->
+    <!--                    <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>-->
+    <!--                    <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>-->
+                        <!-- <div class="btn-slide mt-1">
+    <!--                        <i class="fa fa-share"></i>-->
+    <!--                        <span>-->
+    <!--                            <a href=""><i class="fab fa-facebook-f"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-twitter"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-instagram"></i></a>-->
+    <!--                        </span>-->
+    <!--                    </div> -->-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">-->
+    <!--                <div class="team-item p-0">-->
+    <!--                    <div class="overflow-hidden mb-4">-->
+    <!--                        <img class="img-fluid" src="img/news2.jpg" alt="">-->
+    <!--                    </div>-->
+    <!--                    <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>-->
+    <!--                    <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>-->
+                        <!-- <div class="btn-slide mt-1">
+    <!--                        <i class="fa fa-share"></i>-->
+    <!--                        <span>-->
+    <!--                            <a href=""><i class="fab fa-facebook-f"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-twitter"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-instagram"></i></a>-->
+    <!--                        </span>-->
+    <!--                    </div> -->-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">-->
+    <!--                <div class="team-item p-0">-->
+    <!--                    <div class="overflow-hidden mb-4">-->
+    <!--                        <img class="img-fluid" src="img/news3.jpg" alt="">-->
+    <!--                    </div>-->
+    <!--                    <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>-->
+    <!--                    <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>-->
+                        <!-- <div class="btn-slide mt-1">
+    <!--                        <i class="fa fa-share"></i>-->
+    <!--                        <span>-->
+    <!--                            <a href=""><i class="fab fa-facebook-f"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-twitter"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-instagram"></i></a>-->
+    <!--                        </span>-->
+    <!--                    </div> -->-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">-->
+    <!--                <div class="team-item p-0">-->
+    <!--                    <div class="overflow-hidden mb-4">-->
+    <!--                        <img class="img-fluid" src="img/news4.jpg" alt="">-->
+    <!--                    </div>-->
+    <!--                    <h5 class="mb-0 px-4">How to Easily Setup a MetaMask Wallet?</h5>-->
+    <!--                    <p class="mb-0 px-4 py-4 mt-2 mb-4"> How To / March 28, 2022</p>-->
+                        <!-- <div class="btn-slide mt-1">
+    <!--                        <i class="fa fa-share"></i>-->
+    <!--                        <span>-->
+    <!--                            <a href=""><i class="fab fa-facebook-f"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-twitter"></i></a>-->
+    <!--                            <a href=""><i class="fab fa-instagram"></i></a>-->
+    <!--                        </span>-->
+    <!--                    </div> -->-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
     <!-- Team End -->
 
 
@@ -726,7 +739,15 @@ if(isset($_POST['submit'])){
                 <div class="col-lg-6 col-md-6">
                     <h4 class="text-light mb-4">GONFTs</h4>
                     <p class="mb-2">The world’s first and largest digital marketplace for<br> crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.</p>
-                   
+                    <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>972-998 N Lamer St, Burbank, CA 91506, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+174-730-83545</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@example.com</p> -->
+                    <!-- <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div> -->
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Useful Links</h4>
@@ -737,8 +758,8 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="dashboard/">Sign In</a>
-                    <a class="btn btn-link" href="index.php#artists">Artists</a>
+                    <a class="btn btn-link" href="dashboard/login.php">Sign In</a>
+                    <!--<a class="btn btn-link" href="index.php#artists">Artists</a>-->
                 </div>
                 <!-- <div class="col-lg-2 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>

@@ -250,16 +250,16 @@ if(isset($_POST['submit'])){
               <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                 <!-- Search -->
                 <div class="navbar-nav align-items-center">
-                  <div class="nav-item d-flex align-items-center">
-                    <i class="bx bx-search fs-4 lh-0"></i>
-                    <input
-                      type="text"
-                      class="form-control border-0 shadow-none"
-                      placeholder="Search..."
-                      aria-label="Search..."
-                    />
-                  </div>
-                </div>
+                <!--  <div class="nav-item d-flex align-items-center">-->
+                <!--    <i class="bx bx-search fs-4 lh-0"></i>-->
+                <!--    <input-->
+                <!--      type="text"-->
+                <!--      class="form-control border-0 shadow-none"-->
+                <!--      placeholder="Search..."-->
+                <!--      aria-label="Search..."-->
+                <!--    />-->
+                <!--  </div>-->
+                <!--</div>-->
                 <!-- /Search -->
 
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -277,63 +277,63 @@ if(isset($_POST['submit'])){
                   </li> -->
 
                   <!-- User -->
-                  <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                      <div class="avatar avatar-online">
-                        <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                      </div>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar avatar-online">
-                                <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <span class="fw-semibold d-block">Welcome</span>
-                              <small class="text-muted">Admin</small>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <div class="dropdown-divider"></div>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="bx bx-user me-2"></i>
-                          <span class="align-middle">My Profile</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="bx bx-cog me-2"></i>
-                          <span class="align-middle">Settings</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <span class="d-flex align-items-center align-middle">
-                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                            <span class="flex-grow-1 align-middle">Billing</span>
-                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li>
-                        <div class="dropdown-divider"></div>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="auth-login-basic.html">
-                          <i class="bx bx-power-off me-2"></i>
-                          <span class="align-middle">Log Out</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+                  <!--<li class="nav-item navbar-dropdown dropdown-user dropdown">-->
+                  <!--  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">-->
+                  <!--    <div class="avatar avatar-online">-->
+                  <!--      <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />-->
+                  <!--    </div>-->
+                  <!--  </a>-->
+                  <!--  <ul class="dropdown-menu dropdown-menu-end">-->
+                  <!--    <li>-->
+                  <!--      <a class="dropdown-item" href="#">-->
+                  <!--        <div class="d-flex">-->
+                  <!--          <div class="flex-shrink-0 me-3">-->
+                  <!--            <div class="avatar avatar-online">-->
+                  <!--              <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />-->
+                  <!--            </div>-->
+                  <!--          </div>-->
+                  <!--          <div class="flex-grow-1">-->
+                  <!--            <span class="fw-semibold d-block">Welcome</span>-->
+                  <!--            <small class="text-muted">Admin</small>-->
+                  <!--          </div>-->
+                  <!--        </div>-->
+                  <!--      </a>-->
+                  <!--    </li>-->
+                  <!--    <li>-->
+                  <!--      <div class="dropdown-divider"></div>-->
+                  <!--    </li>-->
+                  <!--    <li>-->
+                  <!--      <a class="dropdown-item" href="#">-->
+                  <!--        <i class="bx bx-user me-2"></i>-->
+                  <!--        <span class="align-middle">My Profile</span>-->
+                  <!--      </a>-->
+                  <!--    </li>-->
+                  <!--    <li>-->
+                  <!--      <a class="dropdown-item" href="#">-->
+                  <!--        <i class="bx bx-cog me-2"></i>-->
+                  <!--        <span class="align-middle">Settings</span>-->
+                  <!--      </a>-->
+                  <!--    </li>-->
+                  <!--    <li>-->
+                  <!--      <a class="dropdown-item" href="#">-->
+                  <!--        <span class="d-flex align-items-center align-middle">-->
+                  <!--          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>-->
+                  <!--          <span class="flex-grow-1 align-middle">Billing</span>-->
+                  <!--          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>-->
+                  <!--        </span>-->
+                  <!--      </a>-->
+                  <!--    </li>-->
+                  <!--    <li>-->
+                  <!--      <div class="dropdown-divider"></div>-->
+                  <!--    </li>-->
+                  <!--    <li>-->
+                  <!--      <a class="dropdown-item" href="auth-login-basic.html">-->
+                  <!--        <i class="bx bx-power-off me-2"></i>-->
+                  <!--        <span class="align-middle">Log Out</span>-->
+                  <!--      </a>-->
+                  <!--    </li>-->
+                  <!--  </ul>-->
+                  <!--</li>-->
                   <!--/ User -->
                 </ul>
               </div>
@@ -454,12 +454,13 @@ if(isset($_POST['submit'])){
                             </div>
                            
                           </div>
-                          <span>Current Plan</span>
+                          <span>Active Plan</span>
                           <h3 class="card-title text-nowrap mb-1"><?php echo $row['current_plan'] ?></h3>
                           <!--<small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small>-->
                         </div>
                       </div>
                     </div>
+
 
                     <div class="col-lg-3 col-md-12 col-6 mb-4">
                       <div class="card">
@@ -475,7 +476,7 @@ if(isset($_POST['submit'])){
                            
                           </div>
                           <span>Royalties</span>
-                          <h3 class="card-title text-nowrap mb-1"><?php echo $row['current_plan'] ?></h3>
+                          <h3 class="card-title text-nowrap mb-1">$<?php echo $row['royalties'] ?></h3>
                           <!--<small class="text-success fw-semibold">Learn More<i class="bx bx-right-arrow-alt"></i></small>-->
                         </div>
                       </div>
@@ -504,7 +505,7 @@ if(isset($_POST['submit'])){
                     <div class="card-body mt-3">
                       <form>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Enter Ammount</label>
+                          <label class="form-label" for="basic-default-fullname">Enter Ammount (In Crypto)</label>
                           <input required type="text" class="form-control" id="amount" placeholder="Enter Ammount" />
                         </div>
                         <div class="mb-3">
@@ -546,16 +547,16 @@ if(isset($_POST['submit'])){
                                   </button>
                                 </div>
                                 <h5 class="text-center mt-2" id="exampleModalLabel1">Complete Investment</h5>
-                                <h2 class="text-center" id="package"></h2><hr class="mx-5">
+                                <!--<h2 class="text-center" id="package"></h2><hr class="mx-5">-->
 
                                 <div class="modal-body" >
                                     <div class="spinner-border spinner-border-sm text-primary" role="status" style="margin-left: 45%">
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
 
-                                    <p class="text-center text-danger mt-4">Pay the BTC equivalent of </p>
-                                    <h6 class="text-center text-info" id="price"></h6>
-                                    <h6 class="text-center ">to the following wallet Address</h6><br>
+                                    <p class="text-center text-danger mt-4">Pay to the following token address </p>
+                                    <!--<h6 class="text-center text-info" id="price"></h6>-->
+                                    <!--<h6 class="text-center ">to the following wallet Address</h6><br>-->
 
                                     <h6 class="text-center mt-3">1DHfKVMiB8XJqUZFUGkfETLteZoJPN5cUa</h6>
 

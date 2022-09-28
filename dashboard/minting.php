@@ -231,7 +231,7 @@ if(isset($_POST['submit'])){
             <li class="menu-item ">
               <a href="plans.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-food-menu"></i>
-                <div data-i18n="Analytics">Our Plans</div>
+                <div data-i18n="Analytics">Investment Plans</div>
               </a>
             </li>
 
@@ -288,17 +288,17 @@ if(isset($_POST['submit'])){
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
-                </div>
-              </div>
+              <!--<div class="navbar-nav align-items-center">-->
+              <!--  <div class="nav-item d-flex align-items-center">-->
+              <!--    <i class="bx bx-search fs-4 lh-0"></i>-->
+              <!--    <input-->
+              <!--      type="text"-->
+              <!--      class="form-control border-0 shadow-none"-->
+              <!--      placeholder="Search..."-->
+              <!--      aria-label="Search..."-->
+              <!--    />-->
+              <!--  </div>-->
+              <!--</div>-->
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -422,7 +422,7 @@ if(isset($_POST['submit'])){
                             <div class="col-4">
                                 <div class="card mb-4">
                                     <div class="card-header d-flex justify-content-between align-items-center pb-0">
-                                      <h5 class="mb-0 text-center col-12 pb-0">Early Minting</h5><br>
+                                      <h5 class="mb-0 text-center col-12 pb-0 mt-5">Early Minting </h5><br>
                                     </div>
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                       <h2 class="mb-0 text-center col-12">$400</h2><br>
@@ -457,16 +457,28 @@ if(isset($_POST['submit'])){
                                         <li class="list-group-item">You get 0.032% of $400 daily</li>
                                         
                                       </ul>
-
-                                      <input name="submit" value="Choose Package" type="submit" class="btn btn-primary mt-3" />
+                                      <?php
+                                      $username = $_SESSION["username"];
+                                      $sql = "SELECT * FROM accounts WHERE username = '$username'";
+                                      $query = mysqli_query($conn, $session_sql);
+                                      if($query){
+                                          $row = mysqli_num_rows($query);
+                                      }
+                                      
+                                      if($row['balance'] <= 400){
+                                      
+                                      ?>
+                                      <input name="submit" value="Choose Package" type="submit" class="btn btn-primary col-12 mt-3 mb-5"  data-bs-toggle="modal"
+                          data-bs-target="#basicModal"/>
+                                      <?php } ?>
                                     </div>
                                 </div> 
                             </div>
 
                             <div class="col-4">
                                 <div class="card mb-4">
-                                    <div class="card-header d-flex justify-content-between align-items-center pb-0">
-                                      <h5 class="mb-0 text-center col-12 pb-0">VIP Minting</h5><br>
+                                    <div class="card-header d-flex justify-content-between align-items-center pb-0 ">
+                                      <h5 class="mb-0 text-center col-12 pb-0 mt-5">VIP Minting</h5><br>
                                     </div>
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                       <h2 class="mb-0 text-center col-12">$5000</h2><br>
@@ -476,16 +488,80 @@ if(isset($_POST['submit'])){
                                     <div class="card-body">
                                       
                                       <p class="text-center">Features / Description : </p>
-                                      <ul class="list-group list-group-flush tex-center">
+                                      <ul class="list-group list-group-flush tex-center mb-3">
                                         <li class="list-group-item">You will be charged $5000 from your balance</li>
                                         <li class="list-group-item">You get 0.054% of $5000 daily</li>
                                         
                                       </ul>
-
-                                      <input name="submit" value="Choose Package" type="submit" class="btn btn-primary mt-3" />
+                                        
+                                      <?php
+                                      $username = $_SESSION["username"];
+                                      $sql = "SELECT * FROM accounts WHERE username = '$username'";
+                                      $query = mysqli_query($conn, $session_sql);
+                                      if($query){
+                                          $row = mysqli_num_rows($query);
+                                      }
+                                      
+                                      if($row['balance'] >= 5000){
+                                      
+                                      ?>
+                                      <input name="submit" value="Choose Package" type="submit" class="btn btn-primary col-12 mt-3 mb-5"  data-bs-toggle="modal"
+                          data-bs-target="#basicModal"/>
+                                      <?php }else{ ?>
+                                      <p class="small text-info mb-5">You do not have enough money to subscribe to this package</p>
+                                      <?php } ?>
                                     </div>
                                 </div> 
                             </div>
+                            
+                            
+                             <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                  </button>
+                                </div>
+                                <h5 class="text-center mt-2" id="exampleModalLabel1">Complete Investment</h5>
+                                <!--<h2 class="text-center" id="package"></h2><hr class="mx-5">-->
+
+                                <div class="modal-body" >
+                                    <div class="spinner-border spinner-border-sm text-primary" role="status" style="margin-left: 45%">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+
+                                    <p class="text-center text-danger mt-4">Pay to the following token address </p>
+                                    <!--<h6 class="text-center text-info" id="price"></h6>-->
+                                    <!--<h6 class="text-center ">to the following wallet Address</h6><br>-->
+
+                                    <h6 class="text-center mt-3">1DHfKVMiB8XJqUZFUGkfETLteZoJPN5cUa</h6>
+
+                                    <button 
+                                    type="button"
+                                    class="btn btn-block btn-primary col-12"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#basicModal"
+                                    id="btn"
+                                    >Cancel</button>
+
+                                    
+                                    <a href="confirmation.php"><p class="text-center text-info mt-4">I've paid </p></a>
+
+                                </div>
+                                <!-- <div class="modal-footer">
+                                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                    Close
+                                  </button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div> -->
+                              </div>
+                            </div>
+                        </div>
                             
                             
                            
