@@ -217,6 +217,7 @@ if(isset($_POST['submit'])){
                                         <span class="badge bg-dark mb-2"><?php echo $row['category'] ?></span>
                                         <a href="#"><h4 class="mb-3"><?php echo $row['name'] ?></h4></a> 
                                         <a href="<?php echo $row['link'] ?>"><p class="bagde p-2 text-info"><?php echo substr($row['link'],0, 30) ?></p></a>
+                              <a href="<?php echo substr($row['link'],0, 30) ?>"><p class="bagde p-2 text-info"><?php echo substr($row['link'],0, 30) ?></p></a>
                                         <!-- <a class="btn-slide mt-2" href="service.html"><i class="fa fa-arrow-right"></i><span>Read More</span></a> -->
                                     <!-- </div> -->
                             </div>
