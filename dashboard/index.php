@@ -99,6 +99,7 @@ if(isset($_POST['submit'])){
   //Getting values from forms
   $username = $_SESSION['username'];
   $amount = $_POST['withdrawamount'];
+  $currency = $_POST['currency'];
   $wallet = $_POST['withdrawwallet'];
 
   // echo $session_name;
@@ -109,9 +110,9 @@ if(isset($_POST['submit'])){
    
     // output data of each row
     while($row = mysqli_fetch_assoc($query)) {
-      $balance = $row['balance'];
+      $balance = $row['earnings'];
       if($amount < $balance ){
-          $sql = "INSERT INTO withdrawal( username, ammount, walletaddress) values('$session_name' , '$amount' ,'$wallet')";
+          $sql = "INSERT INTO withdrawal( username, ammount, currency, walletaddress) values('$session_name' , '$amount' , '$currency' ,'$wallet')";
           $query = mysqli_query($conn, $sql);
           $error = false;
      
@@ -119,11 +120,11 @@ if(isset($_POST['submit'])){
               $error = true;
 
               echo "<script>
-                      alert('Account registered successfully');
+                      alert('Withdrawal request registered successfully');
                     </script>"; 
           }else {
               
-              echo "Accountt not added";
+              echo "Withdrawal not registered";
               echo mysqli_error($conn);
           }
         
@@ -134,20 +135,6 @@ if(isset($_POST['submit'])){
   } 
 
 
-  // $error = false;
- 
-  // if($query){
-  //     $error = true;
-
-  //     echo "<script>
-  //             alert('Account registered successfully');
-  //             location.href ='login.php';
-  //           </script>"; 
-  // }else {
-      
-  //     echo "Accountt not added";
-  //     echo mysqli_error($conn);
-  // }
 
   
 }
@@ -184,7 +171,7 @@ if(isset($_POST['submit'])){
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard - </title>
 
     <meta name="description" content="" />
 
@@ -584,7 +571,7 @@ if(isset($_POST['submit'])){
 
                         <hr>
 
-                        <small class="mt-3">Supported Currencies</small>
+                        <small class="mt-3">Supported Coins</small>
                         <div class="row mt-3">
                           <div class="col">
                             <img src="assets/img/icons/brands/png-transparent-bitcoin-com-cryptocurrency-logo-zazzle-bitcoin-text-trademark-logo.png" alt="" width="40" height="40">
@@ -626,7 +613,26 @@ if(isset($_POST['submit'])){
                                   aria-describedby="basic-addon13"
                                   name="withdrawamount"
                                 />
-                                <span class="input-group-text" id="basic-addon13">USD</span>
+                                <!--<span class="input-group-text" id="basic-addon13">USD</span>-->
+                             </div>
+                             
+                             
+                              <div class="mb-3">
+                                  <label for="exampleFormControlSelect1" class="form-label">Select Currency</label>
+                                  <select name="currency" class="form-select" id="crypto" >
+                                      
+                                      <?php
+                                    
+                                        $sql = "SELECT * FROM currencies";
+                                        $result = mysqli_query($conn, $sql);
+
+                                        while($row = mysqli_fetch_assoc($result)){
+                                    
+                                   
+                                      ?>
+                                    <option value="<?php echo $row['name'] ?>" ><?php echo $row['name'] ?></option>
+                                    <?php } ?>
+                                  </select>
                               </div>
                               
 
@@ -676,6 +682,7 @@ if(isset($_POST['submit'])){
                             while($row = mysqli_fetch_assoc($result))
                             {  
                             $id = urlencode($row['id']);
+                            $currency = $row['currency'];
                         ?>
                         
                         <li class="d-flex mb-4 pb-1">
@@ -689,7 +696,19 @@ if(isset($_POST['submit'])){
                             </div>
                             <div class="user-progress d-flex align-items-center gap-1">
                               <h6 class="mb-0">-<?php echo $row['ammount'] ?></h6>
-                              <span class="text-muted">USD</span>
+                              <span class="text-muted">
+                                  <?php 
+                                     $query9 = "SELECT acronym FROM currencies WHERE name = '$currency' ";
+                                    $result9 = mysqli_query($conn, $query9);
+        
+                                    while($row9 = mysqli_fetch_assoc($result9))
+                                    {  
+                                       
+                                        
+                                  ?>
+                                  <?php  echo $row9['acronym']; } ?>
+                                  
+                              </span>
                             </div>
                           </div>
                         </li>
