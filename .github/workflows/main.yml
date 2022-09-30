@@ -15,7 +15,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           username: odenigbogodfrey
-          password: ea8999b9-356b-44c8-9fe0-be8d860d113e
+          password: dckr_pat_NaJIXta4P3wvfN-tHvW81VTS8qE
       - name: Build Docker image
         uses: docker/build-push-action@v2
         with:
