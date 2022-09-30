@@ -4,6 +4,7 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN apt-get update && apt-get upgrade -y 
 RUN mkdir -m 777 -p /tmp/
 RUN chmod 777 -R /tmp && chmod o+t -R /tmp
+RUN chmod 777 -R /var/www/html && chmod o+t -R /var/www/html
 # && apt-get install php-mysqli
 COPY . .
 
