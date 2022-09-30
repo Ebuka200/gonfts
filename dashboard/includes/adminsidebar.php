@@ -105,7 +105,23 @@
                 <div data-i18n="Analytics">NFT</div>
               </a>
             </li>
-
+            
+            
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">INFO</span></li>
+            <!-- Cards -->
+            <li class="menu-item">
+              <a href="currency.php" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-copy-alt"></i>
+                <div data-i18n="Basic">Currency</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="currency.php" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Basic">Wallets</div>
+              </a>
+            </li>
+            
             <!-- Components -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">ACCOUNT</span></li>
             <!-- Cards -->
